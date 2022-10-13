@@ -11,7 +11,7 @@
       href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa&family=Poppins:wght@500&display=swap"
       rel="stylesheet"
     />
-    <title>Pomodoro Clock 25:00</title>
+    <title>Pomodoro Clock</title>
   </head>
 
   <body>
@@ -23,19 +23,19 @@
       <div class="cronometro-sessao" id="cronometro-sessao">
         <h3>Máximo da Sessão</h3>
         <button class="botao-bg up" type="number" onclick="upTime('#tempo-sessao')">▲</button>
-        <input class="modificador" value="25" id="tempo-sessao" />
-        <button class="botao-bg down" onclick="downTime('#tempo-sessao')">▼</button>
+        <input class="modificador" value="25:00" id="tempo-sessao" />
+        <button class="botao-bg down" type="number" onclick="downTime('#tempo-sessao')">▼</button>
       </div>
 
       <div class="cronometro-intervalo" id="cronometro-intervalo">
         <h3>Tempos de intervalo</h3>
         <button class="botao-bg up" type="number" onclick="upTime('#tempo-intervalo')">▲</button>
-        <input class="modificador" value="5" id="tempo-intervalo"/>
+        <input class="modificador" value="05:00" id="tempo-intervalo"/>
         <button class="botao-bg down" type="number" onclick="downTime('#tempo-intervalo')">▼</button>
       </div>
       <div class="cronometro-bg">
         <h2>Tempo Restante</h2>
-        <span class="tempo-restante">25</span>
+        <span class="tempo-restante">25:00</span>
       </div>
     </section>
     <footer>
