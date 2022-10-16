@@ -22,19 +22,19 @@
     <div class="cronometro-sessao" id="cronometro-sessao">
       <h3>Máximo da Sessão</h3>
       <button class="botao-bg up" type="number" onclick="upTime('#tempo-sessao')">▲</button>
-      <input class="modificador" value="00:00:25" id="tempo-sessao" />
+      <input class="modificador" value="00:25:00" id="tempo-sessao" disabled/>
       <button class="botao-bg down" type="number" onclick="downTime('#tempo-sessao')">▼</button>
     </div>
 
     <div class="cronometro-intervalo" id="cronometro-intervalo">
       <h3>Tempos de intervalo</h3>
       <button class="botao-bg up" type="number" onclick="upTime('#tempo-intervalo')">▲</button>
-      <input class="modificador" value="00:00:05" id="tempo-intervalo" />
+      <input class="modificador" value="00:05:00" id="tempo-intervalo" disabled/>
       <button class="botao-bg down" type="number" onclick="downTime('#tempo-intervalo')">▼</button>
     </div>
     <div class="cronometro-bg">
       <h2 id="sessao-titulo">Tempo Restante</h2>
-      <div id="tempo-restante">00:00:25</div>
+      <div id="tempo-restante">00:25:00</div>
     </div>
   </section>
   <footer>
