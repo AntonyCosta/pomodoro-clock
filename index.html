@@ -1,59 +1,59 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa&family=Poppins:wght@500&display=swap"
-      rel="stylesheet"
-    />
-    <title>Pomodoro Clock</title>
-  </head>
 
-  <body>
-    <main class="container">
-      <h1 class="titulo container">Pomodoro Clock</h1>
-      <p class="titulo-texto">Defina o tempo de sessão e o tempo de intervalo.</p>
-    </main>
-    <section class="cronometro-tempo container">
-      <div class="cronometro-sessao" id="cronometro-sessao">
-        <h3>Máximo da Sessão</h3>
-        <button class="botao-bg up" type="number" onclick="upTime('#tempo-sessao')">▲</button>
-        <input class="modificador" value="30" id="tempo-sessao" />
-        <button class="botao-bg down" type="number" onclick="downTime('#tempo-sessao')">▼</button>
-      </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa&family=Poppins:wght@500&display=swap"
+    rel="stylesheet" />
+  <title>Pomodoro Clock</title>
+</head>
 
-      <div class="cronometro-intervalo" id="cronometro-intervalo">
-        <h3>Tempos de intervalo</h3>
-        <button class="botao-bg up" type="number" onclick="upTime('#tempo-intervalo')">▲</button>
-        <input class="modificador" value="5" id="tempo-intervalo"/>
-        <button class="botao-bg down" type="number" onclick="downTime('#tempo-intervalo')">▼</button>
-      </div>
-      <div class="cronometro-bg">
-        <h2 id="sessao-titulo">Tempo Restante</h2>
-        <div id="tempo-restante">25</div>
-      </div>
-    </section>
-    <footer>
-      <div class="botao-propriedades container">
-        <button class="footer-botao" id="play-botao" onclick="controlTimer('play')">
-          Play
-          <img src="./img/play.png" width="40px" height="40px" alt="" />
-        </button>
-        <button class="footer-botao" id="pause-botao" onclick="controlTimer('pause')">
-          Pause
-          <img src="./img/pause.png" width="30px" height="30px" alt="" />
-        </button>
-        <button class="footer-botao" id="reset-botao" onclick="controlTimer('reset')">
-          Reset
-          <img src="./img/reset.png" width="20px" height="20px" alt="" />
-        </button>
-      </div>
-    </footer>
-  </body>
-  <script src="./script.js"></script>
+<body>
+  <main class="container">
+    <h1 class="titulo container">Pomodoro Clock</h1>
+    <p class="titulo-texto">Defina o tempo de sessão e o tempo de intervalo.</p>
+  </main>
+  <section class="cronometro-tempo container">
+    <div class="cronometro-sessao" id="cronometro-sessao">
+      <h3>Máximo da Sessão</h3>
+      <button class="botao-bg up" type="number" onclick="upTime('#tempo-sessao')">▲</button>
+      <input class="modificador" value="00:00:25" id="tempo-sessao" />
+      <button class="botao-bg down" type="number" onclick="downTime('#tempo-sessao')">▼</button>
+    </div>
+
+    <div class="cronometro-intervalo" id="cronometro-intervalo">
+      <h3>Tempos de intervalo</h3>
+      <button class="botao-bg up" type="number" onclick="upTime('#tempo-intervalo')">▲</button>
+      <input class="modificador" value="00:00:05" id="tempo-intervalo" />
+      <button class="botao-bg down" type="number" onclick="downTime('#tempo-intervalo')">▼</button>
+    </div>
+    <div class="cronometro-bg">
+      <h2 id="sessao-titulo">Tempo Restante</h2>
+      <div id="tempo-restante">00:00:25</div>
+    </div>
+  </section>
+  <footer>
+    <div class="botao-propriedades container">
+      <button class="footer-botao" id="play-botao" onclick="controlTimer('play')">
+        Play
+        <img src="./img/play.png" width="40px" height="40px" alt="" />
+      </button>
+      <button class="footer-botao" id="pause-botao" onclick="controlTimer('pause')">
+        Pause
+        <img src="./img/pause.png" width="30px" height="30px" alt="" />
+      </button>
+      <button class="footer-botao" id="reset-botao" onclick="controlTimer('reset')">
+        Reset
+        <img src="./img/reset.png" width="20px" height="20px" alt="" />
+      </button>
+    </div>
+  </footer>
+</body>
+<script src="./script.js"></script>
+
 </html>
