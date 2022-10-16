@@ -80,7 +80,7 @@ main {
   border: none;
 }
 
-.tempo-restante {
+#tempo-restante {
   font-size: 4em;
   margin-bottom: 10px;
 }

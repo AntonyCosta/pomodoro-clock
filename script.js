@@ -1,54 +1,60 @@
-let sessao = document.querySelector('.modificador').innerHTML;
+let tempoRestante = document.querySelector('#tempo-restante');
+let tempoIntervalo = document.querySelector('#tempo-intervalo');
+let tempoSessao = document.querySelector('#tempo-sessao');
+let sessaoTitulo = document.querySelector('#sessao-titulo');
+let play = document.querySelector('#play-botao');
 
-function upTime(local){
+function upTime(local) {
     let sessaoTempo = parseFloat(document.querySelector(local).value);
     sessaoTempo += 5;
     document.querySelector(local).value = sessaoTempo;
-    
-    if(local =='#tempo-sessao') {
-    document.querySelector('.tempo-restante').innerHTML = sessaoTempo;
-}
+
+    if (local == '#tempo-sessao') {
+        tempoRestante.innerHTML = sessaoTempo;
+    }
 }
 
-function downTime(local){
+function downTime(local) {
     let sessaoTempo = parseFloat(document.querySelector(local).value);
     sessaoTempo -= 5;
     document.querySelector(local).value = sessaoTempo;
-    if(sessaoTempo < 0){
+    if (sessaoTempo < 0) {
         document.querySelector(local).value = 0;
     }
-    if(local=='#tempo-sessao') {
-    document.querySelector('.tempo-restante').innerHTML = sessaoTempo;
+    if (local == '#tempo-sessao') {
+        tempoRestante.innerHTML = sessaoTempo;
     }
 }
 
-function countdown(){
-    let tempoRestante = parseFloat(document.querySelector('.tempo-restante').innerHTML);
-    tempoRestante -= 1;
- document.querySelector('.tempo-restante').innerHTML = tempoRestante;
-    if(tempoRestante < 0){
-        document.querySelector('.tempo-restante').innerHTML = document.querySelector('#tempo-intervalo').value;
-        document.querySelector('h2').textContent = "Intervalo";
+function countdown() {
+    let tempoCountdown = parseFloat(tempoRestante.innerHTML);
+    tempoCountdown -= 1;
+    tempoRestante.innerHTML = tempoCountdown;
+
+    if (tempoCountdown < 0 && sessaoTitulo.innerText == "TEMPO RESTANTE") {
+        tempoRestante.innerHTML = tempoIntervalo.value;
+        sessaoTitulo.innerText = "INTERVALO";
     }
-    else if (tempoRestante < 0) {
-       
+    else if (tempoCountdown < 0 && sessaoTitulo.innerText == "INTERVALO") {
+        tempoRestante.innerHTML = tempoSessao.value;
+        sessaoTitulo.innerText = "TEMPO RESTANTE";
     }
 }
 
 let myTime;
 // let myInterval;
 function controlTimer(action) {
-    if(action == "play"){
-        document.querySelector('#play-botao').disabled = true;
+    if (action == "play") {
+        play.disabled = true;
         myTime = setInterval(function () { countdown() }, 1000);
     }
-    else if(action == "pause"){
-        document.querySelector('#play-botao').disabled = false;
+    else if (action == "pause") {
+        play.disabled = false;
         clearInterval(myTime);
     }
-    else if (action == "reset"){
+    else if (action == "reset") {
         clearInterval();
-        document.querySelector('.tempo-restante').innerHTML = document.querySelector('#tempo-sessao').value
-        document.querySelector('h2').textContent = "Tempo Restante";
+        tempoRestante.innerHTML = tempoSessao.value
+        sessaoTitulo.textContent = "Tempo Restante";
     }
 }
